@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Firebase Login and Register</title>
+</head>
+<body>
+
+<div class="navbar navbar-default">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="https://www.shinerweb.com">TechCraze</a>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <h2>Welcome to TechCraze</h2>
+            <p>Please wait while we check your login status...</p>
+        </div>
+    </div>
+</div>
+<br>
+<center>Developed by <a href="https://shinerweb.com/">Shinerweb</a></center>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCaO6STn3sm13ZuZocyVD_xztuXkYmIVBk",
+      authDomain: "suraj-dudhe-awesome-site.firebaseapp.com",
+      projectId: "suraj-dudhe-awesome-site",
+      storageBucket: "suraj-dudhe-awesome-site.appspot.com",
+      messagingSenderId: "230264467983",
+      appId: "1:230264467983:web:a7d49defbf083c75e4a97a"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            window.location.href = "home.html";
+        } else {
+            window.location.href = "register.html";
+        }
+    });
+</script>
+</body>
+</html>

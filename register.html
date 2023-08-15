@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Register - Firebase Login and Register</title>
+</head>
+<body>
+
+<div class="navbar navbar-default">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="https://www.shinerweb.com">Shinerweb Technologies</a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+             <li><a href="login.html">Login</a></li>
+        </ul>
+    </div>
+</div>
+<br>
+<div class="container">
+    <!-- Registration form -->
+    <div class="row">
+        <div class="col-sm-4">
+            <form name="registration_form" id="registration_form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" class="form-control" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password">
+                </div>
+                <button type="button" id="registerButton" class="btn btn-success">Register Now</button>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <img src="firebase_auth.png">
+        </div>
+    </div>
+</div>
+<br>
+<center>Developed by <a href="https://shinerweb.com/">Shinerweb</a></center>
+
+<script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+    
+    const firebaseConfig = {
+      apiKey: "AIzaSyCaO6STn3sm13ZuZocyVD_xztuXkYmIVBk",
+      authDomain: "suraj-dudhe-awesome-site.firebaseapp.com",
+      projectId: "suraj-dudhe-awesome-site",
+      storageBucket: "suraj-dudhe-awesome-site.appspot.com",
+      messagingSenderId: "230264467983",
+      appId: "1:230264467983:web:a7d49defbf083c75e4a97a"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+
+    const registerButton = document.getElementById("registerButton");
+    registerButton.addEventListener("click", () => {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                alert("Registration successful!");
+                window.location.href = "home.html";
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                alert(errorMessage);
+            });
+    });
+ 
+ </script>
+ <a href="login.html">already registered</a>
+</body>
+</html>

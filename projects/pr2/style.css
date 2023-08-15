@@ -1,0 +1,43 @@
+.a4-container {
+    width: 10in;
+    height: 11.69in;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  .main-table,
+  .secondary-table,
+  .third-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 6px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .table-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .t3 table {
+    width: 100%;
+  }
+  table,
+          th,
+          td {
+              border: 1px solid black;
+              border-collapse: collapse;
+              padding: 6px;
+          }
