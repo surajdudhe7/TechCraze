@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    <title>Signin to TechCraze</title>
+</head>
+<body>
+    <img class="logo" src="C:\Users\Hp\myweb\assets\images__1_-removebg-preview.png" alt="GitHub Logo">
+<div class="welcome">
+    <h1><b>Sign in to TechCraze</b></h1>
+</div>
+<!-- ... (previous code) ... -->
+<div class="container login-container">
+    <form name="login_form" id="login_form">
+        <div class="form-group">
+            <div class="text-left"> <!-- Add a div with the "text-left" class -->
+                <label for="login_email">Email</label>
+            </div>
+            <input type="text" name="login_email" id="login_email" class="form-control" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+            <div class="text-left"> <!-- Add a div with the "text-left" class -->
+                <label for="login_password">Password</label>
+            </div>
+            <input type="password" name="login_password" id="login_password" class="form-control" placeholder="Enter your password">
+            <div class="text-left">
+                <a href=""><b>Forgot password?</b></a>
+                </div>
+        </div>
+       
+        <button type="button" id="loginButton" class="btn btn-success" style="width: 100%;"><b>Sign in</b></button>
+    </form>
+</div>
+<!-- New container for "Already a user?" -->
+<div class="container already-user-container">
+    <div class="text-center">
+        <p>New to TechCraze ? <a href="C:\Users\Hp\myweb\register.html" >Create an account.</a></p>
+    </div>
+</div>
+
+
+<br>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+     
+     const firebaseConfig = {
+       apiKey: "AIzaSyCaO6STn3sm13ZuZocyVD_xztuXkYmIVBk",
+       authDomain: "suraj-dudhe-awesome-site.firebaseapp.com",
+       projectId: "suraj-dudhe-awesome-site",
+       storageBucket: "suraj-dudhe-awesome-site.appspot.com",
+       messagingSenderId: "230264467983",
+       appId: "1:230264467983:web:a7d49defbf083c75e4a97a"
+     };
+ 
+     const app = initializeApp(firebaseConfig);
+     const auth = getAuth();
+ 
+     const loginButton = document.getElementById("loginButton");
+     loginButton.addEventListener("click", () => {
+         const email = document.getElementById("login_email").value;
+         const password = document.getElementById("login_password").value;
+         signInWithEmailAndPassword(auth, email, password)
+             .then((userCredential) => {
+                 const user = userCredential.user;
+                 alert(user.email + " Login successful!");
+                 window.location.href = "home.html";
+             })
+             .catch((error) => {
+                 const errorMessage = error.message;
+                 alert(errorMessage);
+             });
+     });
+ 
+     const logoutButton = document.getElementById("logout");
+     logoutButton.addEventListener("click", () => {
+         signOut(auth)
+             .then(() => {
+                 alert('Sign-out successful.');
+                 document.getElementById('logout').style.display = 'none';
+             })
+             .catch((error) => {
+                 console.log('An error happened.', error);
+             });
+     });
+ </script>
+</body>
+</html>
+
+

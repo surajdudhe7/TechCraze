@@ -1,0 +1,73 @@
+body {
+    background-color: #457B9D;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    margin: 60px auto;
+    color: whitesmoke
+}
+
+.profil-picture {
+    max-width: 250px;
+    border-radius: 50%;
+}
+
+li {
+    list-style-type: none;
+    display: inline;
+    margin: 10px;
+}
+
+ul {
+    padding-inline-start: 0px;
+}
+
+.headline {
+    border: solid 10px cadetblue;
+}
+
+
+
+.bio{
+    max-width: 800px;
+    margin: 30px auto;
+    
+}
+.mail{
+    border: solid 4px cadetblue;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 60px 0px;
+    color: whitesmoke;
+}
+
+.subline{
+    border: solid 4px cadetblue;
+    padding: 0px;
+    margin: 30px;
+}
+
+.cadre{
+    border: solid 4px cadetblue;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .container {
+    width: 700px;
+  }
+}
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container {
+    width: 500px;
+  }
+}
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container {
+    width: 300px;
+  }
+}

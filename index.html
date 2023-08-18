@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Firebase Login and Register</title>
+    <style>
+        body {
+            background-image: url('C:/Users/Hp/OneDrive/Documents/GitHub/TechCraze/assets/background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 0;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        .con{
+            
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img class="logo" src="C:\Users\Hp\myweb\assets\images__1_-removebg-preview.png" alt="GitHub Logo">
+    <div class="row">
+        
+        <div class="col-sm-4 col-sm-offset-4">
+            <h2>Welcome to TechCraze</h2>
+            <p>Please wait while we check your login status...</p>
+        </div>
+    </div>
+</div>
+<br>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCaO6STn3sm13ZuZocyVD_xztuXkYmIVBk",
+      authDomain: "suraj-dudhe-awesome-site.firebaseapp.com",
+      projectId: "suraj-dudhe-awesome-site",
+      storageBucket: "suraj-dudhe-awesome-site.appspot.com",
+      messagingSenderId: "230264467983",
+      appId: "1:230264467983:web:a7d49defbf083c75e4a97a"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            window.location.href = "C:/Users/Hp/myweb/home_page/index.html";
+        } else {
+            window.location.href = "register.html";
+        }
+    });
+</script>
+</body>
+</html>
