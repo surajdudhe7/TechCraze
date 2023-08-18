@@ -5,17 +5,55 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Firebase Login and Register</title>
+    <style>
+        body {
+            background-image: url('C:/Users/Hp/OneDrive/Documents/GitHub/TechCraze/assets/background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 0;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        .con{
+            
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 </head>
 <body>
-
-<div class="navbar navbar-default">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="https://www.shinerweb.com">TechCraze</a>
-    </div>
-</div>
-<br>
 <div class="container">
+    <img class="logo" src="C:\Users\Hp\myweb\assets\images__1_-removebg-preview.png" alt="GitHub Logo">
     <div class="row">
+        
         <div class="col-sm-4 col-sm-offset-4">
             <h2>Welcome to TechCraze</h2>
             <p>Please wait while we check your login status...</p>
@@ -23,7 +61,6 @@
     </div>
 </div>
 <br>
-<center>Developed by <a href="https://shinerweb.com/">Shinerweb</a></center>
 
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
@@ -43,7 +80,7 @@
 
     onAuthStateChanged(auth, (user) => {
         if (user) {
-            window.location.href = "home.html";
+            window.location.href = "C:/Users/Hp/myweb/home_page/index.html";
         } else {
             window.location.href = "register.html";
         }

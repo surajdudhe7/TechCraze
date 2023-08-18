@@ -1,0 +1,59 @@
+body {
+    background-image: url('C:/Users/Hp/OneDrive/Documents/GitHub/TechCraze/assets/background.jpg'); /* Replace 'your-image-url.jpg' with your image URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    flex-direction: column; 
+}
+.login-container {
+    background-color:rgba(245, 234, 234, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+}
+.login-container h2 {
+    margin-top: 0;
+    color: rgb(245, 229, 229);
+}
+.welcome {
+    text-align: center;
+    
+}
+.welcome h1 {
+    font-size: 32px; /* Adjust the font size */
+    color: white; /* Change the font color */
+}
+.logo {
+width: 160px;
+margin: 0 auto 10px;
+}
+.already-user-container {
+background-color: rgba(245, 234, 234, 0.8);
+padding: 20px;
+border-radius: 10px;
+text-align: center;
+max-width: 400px;
+margin-top: 20px;
+}
+
+.already-user-container p {
+    font-size:16px;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.already-user-container a {
+color: #007bff;
+text-decoration: none;
+}
+
+.already-user-container a:hover {
+text-decoration: underline;
+}
